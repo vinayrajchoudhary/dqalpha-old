@@ -21,8 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :content %><br />
-   <%= f.text_area :content%>
-<%=tinymce%>
+ <%= tinymce_assets %> <%= tinymce %>   
+<%= f.text_area :content, :class =>"tinymce", :size => "100 x50", :plugins => ["inlinepopups", "paste", "emotions"] %>
 </div>
   <div class="actions">
     <%= f.submit %>
