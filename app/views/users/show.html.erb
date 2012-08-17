@@ -1,7 +1,16 @@
-<table class="profile">
+
+<table>
+  <tr>
+    <th><h1><%= @user.name%></h1>
+</th>
+    <th><%= image_tag Gravatar.new(@user.email).image_url %><table class="profile"></th>
+       
+  </tr>
+
+</table>
+
 <tr>
 <td class="main">
-
 
 <% unless @user.posts.empty? %>
 <table class="posts">
@@ -9,9 +18,30 @@
 </table>
 <% end %>
 </td>
-<td class="sidebar round">
-<strong>Name</strong> <%= h @user.name %><br />
-<strong>posts</strong> <%= @user.posts.count %>
-</td>
 </tr>
 </table>
+<h2>Quests</h2>
+<% @user.quests.each do |quest| %>
+
+<div class ="post">
+ <li><a href = <%= '/users/'+@user.id.to_s()+'/quests/'+quest.id.to_s()%>>  
+   <%= quest.title %>:</a></li> 
+    <%= quest.description %>
+ </div>
+ </br>
+ <% end %>
+ <h2>Add a Quest:</h2>
+<%= form_for([@user, @user.quests.build]) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>

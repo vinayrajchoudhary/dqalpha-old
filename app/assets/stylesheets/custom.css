@@ -1,13 +1,22 @@
 ﻿.container {
-width: 710px;
+width: 1000px;
 }
-body { background: #ccc;
+body { background: #fff;
 }
-#header { padding-top: 20px;
+#header { height: 50px; background: #fff; margin: auto; padding-right: 150px; padding-left: 250px;
+} 
+#header img { padding-right: 5px; background: #fff; float: left; width: 30px; height: 30px;
 }
-#header img { padding: 1em; background: #fff;
+#content img{float: right; 
 }
-#content { margin-top: 1em; font-size: 120%; padding: 20px; background: #fff;
+#content { background: #eee; width: 900px; padding: 1em; margin-left: auto; margin-right: auto; 
+}
+#sidebar { font-size: 120%; background: #ddd; width: 630px;
+ min-height: 35em;
+}
+div.post { font-size: 120%; padding: 5px; background: #cef; 
+}
+div.users { float: left; width: 850px;
 }
 /* Links */
 a{ color: #09c; text-decoration: none;
@@ -16,12 +25,13 @@ a:hover { color: #069; text-decoration: underline;
 }
 a:visited { color: #069;
 }
-.navigation { float: right;
+.navigation { 
 }
-.navigation { background-color: white; padding: 0 0.7em; white-space: nowrap;
+.navigation { background-color: #fff; white-space: nowrap;
 }
-ul.navigation { margin: 0;}
-.navigation li { list-style-type: none; display: inline-block; padding: 0.2em 0;
+ul.navigation { float: right;}
+
+.navigation li { list-style-type: none; display: inline-block; 
 }
 .navigation li a { padding: 0 5px; font-weight: bold;
 }
@@ -29,15 +39,17 @@ ul.navigation { margin: 0;}
 }
 .navigation li a:hover { text-decoration: underline;
 }
-a.signup_button { margin-left: auto; margin-right: auto; display: block; text-align: center; width: 190px;
-color: #fff; background: #baa; font-size: 150%; font-weight: bold; padding: 20px;
+a.signup_button { margin-left: auto; margin-right: auto; display: block; text-align: center; width: 150px;
+color: #fff; background: #09c; font-size: 150%; font-weight: bold; padding: 10px; 
 }
 .round {
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;
 ￼border-radius: 10px; }
 #footer {
-text-align: center; margin-top: 10px; width: 710px; margin-left: aerrorExplanation ul li {
+clear:both; 
+text-align: right; margin-top: 7px; width: 1310px; margin-left: aerrorExplanation ul li {
 font-size: 12px;
-list-style: square;
+list-style: square; }
 }
+
