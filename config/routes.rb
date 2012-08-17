@@ -7,7 +7,7 @@ Blog::Application.routes.draw do
     #get "pages/search"
   match '/search' => 'pages#search'
 #get "users/new"
-  
+  match 'users/:id/quests/:id' => 'quests#show', :via => [:get, :post]
   resources :users do
     resources :quests
   

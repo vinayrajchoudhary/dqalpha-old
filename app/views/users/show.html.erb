@@ -2,6 +2,7 @@
 <table>
   <tr>
     <th><h1><%= @user.name%></h1>
+    	<%=@user.id%>
 </th>
     <th><%= image_tag Gravatar.new(@user.email).image_url %><table class="profile"></th>
        

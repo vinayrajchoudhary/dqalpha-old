@@ -7,21 +7,19 @@ class QuestsController < ApplicationController
   def index
     
   end
+  
   def show
     @quest = Quest.find(params[:id])
- respond_to do |format|
+    if params[:q] 
+      @user = User.find_by_name(params[:q])
+      @quest.users << @user
+    end
+     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @quest }
-     
     end
   end
-def add_user
- @user = User.find_by_name(params[:q])
- @user.quests << quest
- quest.users << @user
-  respond_to do |format|
-        format.html { redirect_to [:back], notice: 'User was successfully created.' }
-
-    end
-end
+  def add_user
+  
+  end
 end
