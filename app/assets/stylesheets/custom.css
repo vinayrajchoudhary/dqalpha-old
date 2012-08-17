@@ -3,9 +3,9 @@ width: 1000px;
 }
 body { background: #fff;
 }
-#header { height: 50px; background: #fff; margin: auto; padding-right: 150px; padding-left: 250px;
+#header { height: 50px; background: #fff; margin: auto; padding-right: 100px; padding-left: 20px;
 } 
-#header img { padding-right: 5px; background: #fff; float: left; width: 30px; height: 30px;
+#header img { padding-right: 5px; background: #fff; float: left; 
 }
 #content img{float: right; 
 }
