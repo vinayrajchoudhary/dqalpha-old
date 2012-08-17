@@ -1,0 +1,49 @@
+ <b>Title:</b>
+    <%= @quest.title %>
+  </p>
+ 
+  <p>
+    <b>Description:</b>
+    <%= @quest.description %>
+  </p>
+<div class = "users">
+ <b>Users:</b> 
+
+<% @quest.users.each do |user| %>
+<%=user.name%>
+<%= image_tag Gravatar.new(user.email).image_url %>
+<%end%>
+</br>
+</div>
+</br>
+
+<p>
+Add User:
+<%= form_tag("6/add_user", :method => "post") do %>
+  <%= label_tag(:q) %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Add") %>
+<% end %>
+</p>
+
+<h2>q's</h2>
+<% @quest.qs.each do |q| %>
+
+<div class ="post">
+ <li><a href = <%= '/quests/'+@quest.id.to_s()+'/qs/'+q.id.to_s()%>>  
+   <%= q.title %>:</a></li> 
+ </div>
+ </br>
+ <% end %>
+  <h2>Add a q:</h2>
+<%= form_for([@quest, @quest.qs.build]) do |f| %>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+<% end %>
