@@ -1,5 +1,4 @@
 
-<table>
   <tr>
     <th><h1><%= @user.name%></h1>
     	<%=@user.id%>
@@ -8,19 +7,6 @@
        
   </tr>
 
-</table>
-
-<tr>
-<td class="main">
-
-<% unless @user.posts.empty? %>
-<table class="posts">
-<%= render :template => 'posts/index' %>
-</table>
-<% end %>
-</td>
-</tr>
-</table>
 <h2>Quests</h2>
 <% @user.quests.each do |quest| %>
 
@@ -30,6 +16,7 @@
     <%= quest.description %>
  </div>
  </br>
+ <hr class = "line">
  <% end %>
  <h2>Add a Quest:</h2>
 <%= form_for([@user, @user.quests.build]) do |f| %>

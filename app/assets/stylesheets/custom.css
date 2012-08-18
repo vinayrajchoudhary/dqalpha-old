@@ -1,9 +1,9 @@
 ﻿.container {
-width: 1000px;
+margin-bottom: 0px; margin-top: 0px;
 }
 body { background: #fff;
 }
-#header { height: 50px; background: #fff; margin: auto; padding-right: 100px; padding-left: 20px;
+#header { height: 50px; background: #fff; margin-top: 0px; padding-right: 100px; padding-left: 20px;
 } 
 #header img { padding-right: 5px; background: #fff; float: left; 
 }
@@ -18,6 +18,9 @@ div.post { font-size: 120%; padding: 5px; background: #cef;
 }
 div.users { float: left; width: 850px;
 }
+hr.line { background-color: #eff; height: 1px;
+}
+
 /* Links */
 a{ color: #09c; text-decoration: none;
 }
