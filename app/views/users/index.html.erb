@@ -1,5 +1,10 @@
 <h1>Listing users</h1>
 
+<%= form_tag({ :action => "index"}, :method => "get") do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Find", :name => nil) %>
+<% end %>
 <table>
   <tr>
     <th>Name</th>

@@ -4,6 +4,14 @@
   has_many :qmails
   has_many :involvements
   has_many :quests, :through => :involvements, :uniq => true
+  def self.search(search)
+    if search
+      find(:all, :conditions => [ 'name LIKE ?', "%#{search}%" ])
+    else
+       all
+    end
+    
+  end
   acts_as_authentic
     attr_accessible :name, :email, :password, :password_confirmation
 end

@@ -10,8 +10,8 @@ class QuestsController < ApplicationController
   
   def show
     @quest = Quest.find(params[:id])
-    if params[:q] 
-      @user = User.find_by_name(params[:q])
+    if params[:add_user] 
+      @user = User.find_by_name(params[:add_user])
       @quest.users << @user
     end
      respond_to do |format|
