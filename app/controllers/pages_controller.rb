@@ -15,7 +15,8 @@ class PagesController < ApplicationController
 		require 'media_wiki'
 		mw = MediaWiki::Gateway.new('http://en.wikipedia.org/w/api.php/')
 	#	wiki = WikiCloth::Parser.new({:data => mw.get(params[:q])}) 
-		wiki =  mw.get('india') 
+		@options = [:limit =>50]
+		wiki =  mw.search(params[:q],"main", 5) 
     
 		@content=wiki
 

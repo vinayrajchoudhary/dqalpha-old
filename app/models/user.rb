@@ -6,7 +6,7 @@
   has_many :quests, :through => :involvements, :uniq => true
   def self.search(search)
     if search
-      find(:all, :conditions => [ 'lower(name) LIKE ?', "%#{search}%".downcase ])
+      find(:all, :conditions => [ 'lower(name) LIKE ? or lower(email) LIKE ?', "%#{search}%".downcase, "%#{search}%".downcase ])
     else
        all
     end

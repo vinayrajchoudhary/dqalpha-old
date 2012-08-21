@@ -6,26 +6,8 @@
     <b>Description:</b>
     <%= @quest.description %>
   </p>
-<b>Users:</b> 
-<table>
-<% @quest.users.each do |user| %>
-
-<td><%= image_tag(Gravatar.new(user.email).image_url, :size => "30x30") %></td>
-<td><%= link_to h(user.name), user %></td>
-
-<%end%>
-</table>
 
 
-<p>
-Add User:
-
-<%= form_tag(:action => "show") do %>
-  <%= label_tag(:add_user, "=>") %>
-  <%= text_field_tag(:add_user) %>
-  <%= submit_tag("Add") %>
-<% end %>
-</p>
 <h2>q's</h2>
 <% @quest.qs.each do |q| %>
 
