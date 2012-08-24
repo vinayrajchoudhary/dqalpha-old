@@ -7,16 +7,18 @@ gem 'rails', '3.2.6'
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
 end
-group :production do
-  gem 'pg'
-end
+#group :production do
+#  gem 'pg'
+#end
 gem 'calc'
 gem 'authlogic'
+gem 'execjs'
+gem 'therubyracer'
 gem 'will_paginate'
 gem 'json'
 gem 'gravatar-ultimate'
 gem 'has_mailbox'
-gem 'pg'
+#gem 'pg'
 gem 'jquery-rails'
 gem 'mediawiki-gateway'
 gem 'wikipedia-client'

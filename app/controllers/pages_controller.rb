@@ -13,11 +13,14 @@ class PagesController < ApplicationController
 		require 'rubygems'
 		require 'wikicloth'
 		require 'media_wiki'
+		require 'nokogiri'
 		mw = MediaWiki::Gateway.new('http://en.wikipedia.org/w/api.php/')
 	#	wiki = WikiCloth::Parser.new({:data => mw.get(params[:q])}) 
-		wiki =  mw.render(params[:q]) 
-    
-		@content=wiki
+		wiki =  mw.render(params[:q])
+		@doc = Nokogiri::HTML(wiki)
+		@para1 = @doc.xpath('//p[1]').text 
+    		@contents = @doc.xpath('//table[@id="toc"]')
+		
 
 	end
 if params[:c] 
